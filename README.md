@@ -4,7 +4,7 @@
 
 Provides functions to create and use [ES6-style modules](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/export#Using_the_default_export) in lua code.
 
-Modules let you write componentized and sharable code. WLPM Module Manager allows you to declare your modules in any order. 
+Modules let you write componentized and sharable code. IMP Module Manager allows you to declare your modules in any order. 
 It arranges everything for you: dependency tree, loop detection, lazy loading, naming conflicts isolation etc.
 
 
