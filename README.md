@@ -40,7 +40,7 @@ World = Imp.export("World", function()
 end)
 
 -- init section (main)
-local World = Wlpm.import(World)
+local World = Imp.import(World)
 ```
 
 Result:
