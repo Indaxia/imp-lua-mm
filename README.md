@@ -1,6 +1,6 @@
 # Lua Module Manager for IMP
 
-[IMP](https://github.com/Indaxia/imp-lua) - Indaxia Modules & Packages for Lua (Package Manager).
+[IMP](https://github.com/Indaxia/imp) - Indaxia Modules & Packages for Lua (Package Manager).
 
 Provides functions to create and use [ES6-style modules](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/export#Using_the_default_export) in lua code.
 
@@ -14,7 +14,7 @@ It is **friendly for code inspectors** like:
 ![image](https://github.com/user-attachments/assets/d3e7c02c-5eae-422c-8777-3daa6fb214b5)
 
 ## Automatic installation
-Initialize and build your project using [IMP](https://github.com/Indaxia/imp-lua)
+Initialize and build your project using [IMP](https://github.com/Indaxia/imp)
 
 ## Manual installation
 Copy [imp-module-manager.lua](imp-module-manager.lua) to your code head section.
