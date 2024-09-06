@@ -7,72 +7,82 @@ It arranges everything for you: dependency tree, loop detection, lazy loading, n
 
 
 ## How to install
-- Use [WLPM](https://github.com/Indaxia/WLPM)
-- **OR** copy [wlpm-module-manager.lua](wlpm-module-manager.lua) to your top Custom Code section or top of the war3map.lua
-- **OR** download [Demo map](wlpm-mm-demo1.w3x)
+- Use [IMP](https://github.com/Indaxia/imp-lua)
+- **OR** copy [imp-module-manager.lua](imp-module-manager.lua) to your init section
 
 ## Example Usage
 
-
 ```lua
--- file1 (or Custom Script 1)
-WM("myMainModule", function(import, export, exportDefault) -- declare your main module
-    local greeting = import "helloModule" -- use default export value
-    local anotherGreeting = import("welcome", "helloModule") -- use custom export value
-    local coffee = import "coffeeModule"
-    local anotherCoffee = import("cappuccino", "coffeeModule")
-    
-    print (greeting)
-    print (anotherGreeting)
-    print (coffee)
-    print (anotherCoffee)
+-- file 1
+Hello = Imp.export("Hello", function()
+  -- make any init code here that is executed once
+
+  -- export module (your data & functions or empty table)
+  return {
+    foo = "bar",
+    welcome = function() print "Hello world!" end
+  }
 end)
 
--- file2 (or Custom Script 2)
-WM("coffeeModule", function(import, export, exportDefault) -- declare your module
-    exportDefault "Espresso!" -- declare default export value
-    export("cappuccino", "Your cappuccino, sir!") -- declare custom export value
+-- file 2
+World = Imp.export("World", function()
+  -- import modules
+  local Hello = Imp.import(Hello)
+
+  -- make any init code here that is executed once
+  Hello.f()
+
+  -- export module (your data & functions or empty table)
+  return {}
 end)
 
--- file3 (or Custom Script 3)
-WM("helloModule", function(import, export, exportDefault) -- declare your module
-    exportDefault "Hello!" -- declare default export value 
-    export("welcome", "Welcome!") -- declare custom export value
-end)
-
--- call your main import from triggers on MAP INITIALIZATION or anywhere
-importWM("myMainModule") 
+-- init section (main)
+local World = Wlpm.import(World)
 ```
 
 Result:
 ```
-Hello!
-Welcome!
-Espresso!
-Your cappuccino, sir!
+hello
+world
 ```
 
-## Advanced Usage
+## Alternate naming
+You can rename globally defined modules in case of conflict and use both:
 
 ```lua
--- advanced export
-WM("coffeeModule", function(import, export, exportDefault) -- declare your module
-    exportDefault "Espresso!" -- declare default export value
-    export { -- declare multiple custom export values
-      "cappuccino" = "Your cappuccino, sir!",
-      "macciato" = "One nonfat macchiato",
-      "someFunction" = (function() return "something" end)
-    }
+-- vendor module 1
+Hello = Imp.export("Hello", function()
+  return {
+    x = "this is A"
+  }
 end)
 
--- initialize modules before call and (or) without getting values
-WM("myMainModule", {"helloModule","coffeeModule"}, function(import, export, exportDefault) 
-    
+-- vendor module 2
+Hello = Imp.export("Hello", function()
+  return {
+    y = "this is B"
+  }
 end)
 
--- Disable lazy loading and load all modules instantly
-loadAllWMs()
+-- vendor module 3
+Hello = Imp.export("Hello", function()
+  return {
+    z = "this is C"
+  }
+end)
 
+-- your module
+World = Imp.export("World", function()
+  ---@type { x: string }
+  local A = Imp.import({ name = "Hello" })
+  ---@type { y: string }
+  local B = Imp.import({ name = "Hello*" })
+  ---@type { z: string }
+  local C = Imp.import({ name = "Hello**" })
+
+  print(A.x .. ", " .. B.x .. ", " .. C.x)
+end)
+
+-- init section (main)
+World = Imp.import(World)
 ```
-
-ScorpioT1000 / 2019 
