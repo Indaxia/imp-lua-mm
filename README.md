@@ -7,10 +7,11 @@ Provides functions to create and use [ES6-style modules](https://developer.mozil
 Modules let you write componentized and sharable code. IMP Module Manager allows you to declare your modules in any order. 
 It arranges everything for you: dependency tree, loop detection, lazy loading, naming conflicts isolation etc.
 
+## Automatic installation
+- Initialize and build your project using [IMP](https://github.com/Indaxia/imp-lua)
 
-## How to install
-- Use [IMP](https://github.com/Indaxia/imp-lua)
-- **OR** copy [imp-module-manager.lua](imp-module-manager.lua) to your init section
+## Manual installation
+Copy [imp-module-manager.lua](imp-module-manager.lua) to your code head section.
 
 ## Example Usage
 
