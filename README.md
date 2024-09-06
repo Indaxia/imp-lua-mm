@@ -45,8 +45,7 @@ local World = Imp.import(World)
 
 Result:
 ```
-hello
-world
+Hello world!
 ```
 
 ## Alternate naming
