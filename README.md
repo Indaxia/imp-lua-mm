@@ -33,7 +33,7 @@ World = Imp.export("World", function()
   local Hello = Imp.import(Hello)
 
   -- make any init code here that is executed once
-  Hello.f()
+  Hello.welcome()
 
   -- export module (your data & functions or empty table)
   return {}
