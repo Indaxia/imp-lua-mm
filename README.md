@@ -11,7 +11,7 @@ It is **friendly for code inspectors** like:
 - [LuaLS](https://luals.github.io) - [install for vscode](https://luals.github.io/#vscode-install) and other IDEs
 - [EmmyLua](https://plugins.jetbrains.com/plugin/9768-emmylua) for Intellij
 
-![image](https://github.com/user-attachments/assets/d3e7c02c-5eae-422c-8777-3daa6fb214b5)
+<img src="https://github.com/user-attachments/assets/d3e7c02c-5eae-422c-8777-3daa6fb214b5" width="320px" height="auto">
 
 ## Automatic installation
 Initialize and build your project using [IMP](https://github.com/Indaxia/imp)
