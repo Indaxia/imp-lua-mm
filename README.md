@@ -7,6 +7,10 @@ Provides functions to create and use [ES6-style modules](https://developer.mozil
 Modules let you write componentized and sharable code. IMP Module Manager allows you to declare your modules in any order. 
 It arranges everything for you: dependency tree, loop detection, lazy loading, naming conflicts isolation etc.
 
+It is **friendly for code inspectors** like:
+- [LuaLS](https://luals.github.io) - [install for vscode](https://luals.github.io/#vscode-install) and other IDEs
+- [EmmyLua](https://plugins.jetbrains.com/plugin/9768-emmylua) for Intellij
+
 ## Automatic installation
 Initialize and build your project using [IMP](https://github.com/Indaxia/imp-lua)
 
