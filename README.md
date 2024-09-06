@@ -17,7 +17,7 @@ It is **friendly for code inspectors** like:
 Initialize and build your project using [IMP](https://github.com/Indaxia/imp)
 
 ## Manual installation
-Copy [imp-module-manager.lua](imp-module-manager.lua) to your code head section.
+Copy [imp-module-manager.lua](src/imp-module-manager.lua) to your code head section.
 
 ## Example Usage
 
