@@ -8,7 +8,7 @@ Modules let you write componentized and sharable code. IMP Module Manager allows
 It arranges everything for you: dependency tree, loop detection, lazy loading, naming conflicts isolation etc.
 
 ## Automatic installation
-- Initialize and build your project using [IMP](https://github.com/Indaxia/imp-lua)
+Initialize and build your project using [IMP](https://github.com/Indaxia/imp-lua)
 
 ## Manual installation
 Copy [imp-module-manager.lua](imp-module-manager.lua) to your code head section.
