@@ -94,3 +94,7 @@ end)
 -- init section (main)
 World = Imp.import(World)
 ```
+Result:
+```
+this is A, this is B, this is C
+```
