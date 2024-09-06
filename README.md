@@ -88,7 +88,7 @@ World = Imp.export("World", function()
   ---@type { z: string }
   local C = Imp.import({ name = "Hello**" })
 
-  print(A.x .. ", " .. B.x .. ", " .. C.x)
+  print(A.x .. ", " .. B.y .. ", " .. C.z)
 end)
 
 -- init section (main)
