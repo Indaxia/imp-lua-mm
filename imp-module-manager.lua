@@ -15,6 +15,9 @@ Imp = {
   ---@param context fun(): T Function that is called once and returns the module contents
   ---@return T definition LuaLS trick to help the inspector
   export = function(name, context)
+    while Imp.containers[name] ~= nil do
+      name = name .. "*"
+    end
     if (name ~= nil and type(context) == "function") then
       Imp.containers[name] = {
         loaded = false,
