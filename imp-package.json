@@ -1,0 +1,9 @@
+{
+    "title": "IMP Module Manager",
+    "author": "ScorpioT1000",
+    "license": "MIT",
+    "dependencies": {},
+    "sources": [
+      "src"
+    ]
+}
